@@ -1,0 +1,14 @@
+var app = require("../app");
+
+const db = require("../database/db");
+db.sync()
+  .then((result) => {
+    if (result) {
+      console.log("DB Connected");
+    }
+  })
+  .catch((err) => {
+    console.log("Database Connection Error: ", err);
+  });
+
+app.listen(3000);
